@@ -43,9 +43,6 @@ dependencies {
     //picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-    //gson
-    //implementation 'com.google.code.gson:gson:2.8.0'
-
     //room runtime
     implementation "android.arch.persistence.room:runtime:$roomVersion"
     annotationProcessor "android.arch.persistence.room:compiler:$roomVersion"
@@ -55,9 +52,6 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$lifecycleVersion"
     
-    //debug database
-    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
-
     //mockito unit testing
     testImplementation 'org.mockito:mockito-core:2.9.0'
 
@@ -65,8 +59,5 @@ dependencies {
     testImplementation 'org.powermock:powermock-module-junit4:1.7.0'
     testImplementation 'org.powermock:powermock-core:1.7.0'
     testImplementation 'org.powermock:powermock-module-junit4-rule:1.7.0'
-
-    //roboelectric
-    testImplementation 'org.robolectric:robolectric:3.0'
-
+    
 }
