@@ -3,14 +3,15 @@ package com.example.aviyer.doordashsampleapp.viewmodels;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
 import android.support.annotation.NonNull;
 import com.example.aviyer.doordashsampleapp.database.entities.Restaurant;
 import com.example.aviyer.doordashsampleapp.database.repository.RestaurantsRepository;
 
 import java.util.List;
 
+/**
+ * ViewModel class which abstracts logic away from UI and returns response to be displayed
+ * */
 public class RestaurantsViewModel extends AndroidViewModel {
 
     public RestaurantsViewModel(@NonNull Application application) {
