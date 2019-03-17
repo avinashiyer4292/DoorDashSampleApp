@@ -10,8 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
-import android.util.Log;
 import android.widget.Toast;
 import com.example.aviyer.doordashsampleapp.R;
 import com.example.aviyer.doordashsampleapp.adapters.RestaurantListAdapter;
@@ -24,6 +22,7 @@ public class RestaurantListActivity extends AppCompatActivity {
 
     private RestaurantsViewModel mViewModel;
     private RecyclerView mRecyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +41,6 @@ public class RestaurantListActivity extends AppCompatActivity {
         //view model init
         mViewModel  = ViewModelProviders.of(this).get(RestaurantsViewModel.class);
         if(isNetworkAvailable(this)){
-            Log.d("Network!!","IS avaialbale");
             mViewModel.getAllRestaurantsFromApi();
         }else{
             Toast.makeText(this, "No internet connection found, Loading offline data!!!", Toast.LENGTH_LONG).show();
@@ -51,6 +49,7 @@ public class RestaurantListActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable List<Restaurant> restaurants) {
                 adapter.setRestaurants(restaurants);
+                adapter.notifyDataSetChanged();
             }
         });
 
